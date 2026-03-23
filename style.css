@@ -1,0 +1,29 @@
+html {
+	color-scheme: light dark;
+}
+
+body {
+	width: 35em;
+	margin: 0 auto;
+	font-family: "Adwaita Sans", Helvetica, Arial, sans-serif;
+	font-size: 2em;
+
+}
+
+li {
+	margin: 25px;
+}
+
+ul {
+	list-style: "> ";
+	columns: 2;
+}
+
+/* link styling */
+a {
+    color: #2a7ae2;
+}
+
+a:hover {
+    color: light-dark(#000000, #F5F5F5);
+}
