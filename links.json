@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Lobsters",
+    "url": "https://lobste.rs/",
+    "icon": "https://lobste.rs/favicon.ico"
+  },
+  {
+    "name": "Dogpile",
+    "url": "https://www.dogpile.com/",
+    "icon": "https://www.dogpile.com/img/favicon.svg"
+  },
+  {
+    "name": "Bubbles",
+    "url": "https://bubbles.town/",
+    "icon": "https://bubbles.town/static/header-icon.png"
+  },
+  {
+    "name": "Bluesky",
+    "url": "https://bsky.app/",
+    "icon": "https://web-cdn.bsky.app/static/apple-touch-icon.png"
+  },
+  {
+    "name": "Immich",
+    "url": "https://immich.25cat.net/",
+    "icon": "https://immich.25cat.net/favicon-144.png"
+  },
+  {
+    "name": "Jellyfin",
+    "url": "https://jellyfin.25cat.net/",
+    "icon": "https://jellyfin.25cat.net/web/icon-transparent.baba78f2a106d9baee83.png"
+  },
+  {
+    "name": "Tumblr",
+    "url": "https://www.tumblr.com/",
+    "icon": "https://assets.tumblr.com/pop/manifest/favicon-cfddd25f.svg"
+  },
+  {
+    "name": "ListenBrainz",
+    "url": "https://listenbrainz.org/user/auroraskys/",
+    "icon": "https://listenbrainz.org/static/img/favicon-256.png"
+  }
+]

@@ -8,50 +8,20 @@
 	</head>
 	<body>
 		<h1>Meowo~ฅ^>⩊<^ ฅ</h1>
-		<ul>
+		<ul id="links"></ul>
+		<script>
+			fetch("links.json")
+			.then(r => r.json())
+			.then(links => {
+			document.getElementById("links").innerHTML = links.map(l => `
+			<li>
+				<a href="${l.url}">
+					<img src="${l.icon}"></a>
+				<a class="underlink" href="${l.url}">${l.name}</a>
+			</li>`).join("");
+			});	
+			</script>
 
-			<li>
-				<a href="https://lobste.rs">
-					<img src="https://lobste.rs/favicon.ico"></a>
-				<a class="underlink" href="https://lobste.rs">Lobsters</a>
-			</li>
-			<li>
-				<a href="https://www.dogpile.com/">
-					<img src="https://www.dogpile.com/img/favicon.svg"></a>
-				<a class="underlink" href="https://www.dogpile.com/">Dogpile</a>
-			</li>
-			<li>
-				<a href="https://bubbles.town/">
-					<img src="https://bubbles.town/static/header-icon.png"></a>
-				<a class="underlink" href="https://bubbles.town/">Bubbles</a>
-			</li>
-			<li>
-				<a href="https://bsky.app/">
-					<img src="https://web-cdn.bsky.app/static/apple-touch-icon.png"></a>
-				<a class="underlink" href="https://bsky.app/">Bluesky</a>
-			</li>
-			<li>
-				<a href="https://immich.25cat.net/">
-					<img src="https://immich.25cat.net/favicon-144.png"></a>
-				<a class="underlink" href="https://immich.25cat.net/">Immich</a>
-			</li>
-			<li>
-				<a href="https://jellyfin.25cat.net/">
-					<img src="https://jellyfin.25cat.net/web/icon-transparent.baba78f2a106d9baee83.png"></a>
-				<a class="underlink" href="https://jellyfin.25cat.net/">Jellyfin</a>
-			</li>
-			<li>
-				<a href="https://www.tumblr.com/">
-					<img src="https://assets.tumblr.com/pop/manifest/favicon-cfddd25f.svg"></a>
-				<a class="underlink" href="https://www.tumblr.com/">Tumblr</a>
-			</li>
-			<li>
-				<a href="https://listenbrainz.org/user/auroraskys/">
-					<img src="https://listenbrainz.org/static/img/favicon-256.png"></a>
-				<a class="underlink" href="https://listenbrainz.org/user/auroraskys/">ListenBrainz</a>
-			</li>
-
-		</ul>
 		<img class="corner-image" src="https://raw.githubusercontent.com/MultiMC/Launcher/refs/heads/develop/launcher/resources/backgrounds/catbgrnd2.png" alt="">
 	</body>
 </html>
