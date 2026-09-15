@@ -44,6 +44,12 @@ ul {
 	padding-left: 0;
 }
 
+@media (max-width: 62em) {
+    ul {
+        columns: 2;
+    }
+}
+
 a {
     color: #2a7ae2;
     text-decoration: none;
