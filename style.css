@@ -3,27 +3,60 @@ html {
 }
 
 body {
-	width: 35em;
-	margin: 0 auto;
 	font-family: "Adwaita Sans", Helvetica, Arial, sans-serif;
 	font-size: 2em;
+	margin: auto;
 
+}
+
+h1 {
+	text-align: center;
+	margin-left: 0px;
 }
 
 li {
-	margin: 25px;
+	text-align: center;
+	padding-bottom: 0.5em;
+}
+
+.underlink {
+	display: block;
+	font-size: 0.75em;
+}
+
+li img {
+	height: 4em;
+	border-radius: 12%;
+	#image-rendering: pixelated;
+}
+li a img {
+	height: 4em;
+	border-radius: 12%;
+	#image-rendering: pixelated;
 }
 
 ul {
-	list-style: "> ";
-	columns: 2;
+	padding-top: 2em;
+	list-style: "";
+	columns: 4;
+	max-width: 20em;
+	margin-inline: auto;
+	padding-left: 0;
 }
 
-/* link styling */
 a {
     color: #2a7ae2;
+    text-decoration: none;
 }
 
 a:hover {
     color: light-dark(#000000, #F5F5F5);
+}
+
+.corner-image {
+	width: 18em;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
 }
