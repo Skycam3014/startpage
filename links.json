@@ -15,9 +15,9 @@
     "icon": "https://bubbles.town/static/header-icon.png"
   },
   {
-    "name": "Bluesky",
-    "url": "https://bsky.app/",
-    "icon": "https://web-cdn.bsky.app/static/apple-touch-icon.png"
+    "name": "SLSKD",
+    "url": "https://slskd.25cat.net/",
+    "icon": "https://slskd.25cat.net/favicon.ico"
   },
   {
     "name": "Immich",
@@ -30,9 +30,9 @@
     "icon": "https://jellyfin.25cat.net/web/icon-transparent.baba78f2a106d9baee83.png"
   },
   {
-    "name": "Tumblr",
-    "url": "https://www.tumblr.com/",
-    "icon": "https://assets.tumblr.com/pop/manifest/favicon-cfddd25f.svg"
+    "name": "Lidarr",
+    "url": "https://lidarr.25cat.net/",
+    "icon": "https://lidarr.25cat.net/Content/Images/Icons/favicon-32x32.png?h=A4Puz/BOMl/J488czqfgOQ"
   },
   {
     "name": "ListenBrainz",
