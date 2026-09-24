@@ -2,7 +2,6 @@
 
 (function oneko() {
   const nekoEl = document.createElement("div");
-  let persistPosition = true;
 
   let nekoPosX = 32;
   let nekoPosY = 32;
@@ -12,7 +11,9 @@
 
   let frameCount = 0;
   let idleTime = 0;
-  let idleAnimation = null;
+  var sleeping = true;
+  var justAwake = false;
+  let idleAnimation = "sleeping";
   let idleAnimationFrame = 0;
 
   const nekoSpeed = 10;
@@ -85,35 +86,26 @@
     if (curScript && curScript.dataset.cat) {
       nekoFile = curScript.dataset.cat
     }
-    if (curScript && curScript.dataset.persistPosition) {
-      if (curScript.dataset.persistPosition === "") {
-        persistPosition = true;
-      } else {
-        persistPosition = JSON.parse(curScript.dataset.persistPosition.toLowerCase());
-      }
-    }
   
-    if (persistPosition) {
-      let storedNeko = JSON.parse(window.localStorage.getItem("oneko"));
-      if (storedNeko !== null) {
-        nekoPosX = storedNeko.nekoPosX;
-        nekoPosY = storedNeko.nekoPosY;
-        mousePosX = storedNeko.mousePosX;
-        mousePosY = storedNeko.mousePosY;
-        frameCount = storedNeko.frameCount;
-        idleTime = storedNeko.idleTime;
-        idleAnimation = storedNeko.idleAnimation;
-        idleAnimationFrame = storedNeko.idleAnimationFrame;
-        nekoEl.style.backgroundPosition = storedNeko.bgPos;
-      }
-    }
+     nekoEl.onclick = function () {
+      sleeping = false;
+      justAwake = true;
+
+      idleAnimation = null;
+      idleAnimationFrame = 0;
+      idleTime = 999;
+
+      nekoEl.style.pointerEvents = "none";
+      nekoEl.style.cursor = "default";
+   };
   
     nekoEl.id = "oneko";
     nekoEl.ariaHidden = true;
     nekoEl.style.width = "32px";
     nekoEl.style.height = "32px";
     nekoEl.style.position = "fixed";
-    nekoEl.style.pointerEvents = "none";
+    nekoEl.style.pointerEvents = sleeping ? "auto" : "none";
+    nekoEl.style.cursor = sleeping ? "pointer" : "default";
     nekoEl.style.imageRendering = "pixelated";
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
@@ -127,22 +119,6 @@
       mousePosX = event.clientX;
       mousePosY = event.clientY;
     });
-    
-    if (persistPosition) {
-      window.addEventListener("beforeunload", function (event) {
-        window.localStorage.setItem("oneko", JSON.stringify({
-          nekoPosX: nekoPosX,
-          nekoPosY: nekoPosY,
-          mousePosX: mousePosX,
-          mousePosY: mousePosY,
-          frameCount: frameCount,
-          idleTime: idleTime,
-          idleAnimation: idleAnimation,
-          idleAnimationFrame: idleAnimationFrame,
-          bgPos: nekoEl.style.backgroundPosition
-        }));
-      });
-    }
     
     window.requestAnimationFrame(onAnimationFrame);
   }
@@ -204,12 +180,18 @@
 
     switch (idleAnimation) {
       case "sleeping":
-        if (idleAnimationFrame < 8) {
+	
+	  if (sleeping) {
+             setSprite("sleeping", Math.floor(idleAnimationFrame / 4));
+             break;
+          }
+
+        if (idleAnimationFrame < 8 && !sleeping) {
           setSprite("tired", 0);
           break;
         }
         setSprite("sleeping", Math.floor(idleAnimationFrame / 4));
-        if (idleAnimationFrame > 192) {
+        if (idleAnimationFrame > 192 && !sleeping) {
           resetIdleAnimation();
         }
         break;
@@ -236,7 +218,7 @@
     const diffY = nekoPosY - mousePosY;
     const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
 
-    if (distance < nekoSpeed || distance < 48) {
+    if (!justAwake && (distance < nekoSpeed || distance < 48 || sleeping)) {
       idle();
       return;
     }
@@ -251,6 +233,8 @@
       idleTime -= 1;
       return;
     }
+
+    justAwake = false;
 
     let direction;
     direction = diffY / distance > 0.5 ? "N" : "";
