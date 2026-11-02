@@ -2,41 +2,41 @@
   {
     "name": "Lobsters",
     "url": "https://lobste.rs/",
-    "icon": "https://lobste.rs/favicon.ico"
+    "icon": "./assets/favicons/lobsters.ico"
   },
   {
-    "name": "Dogpile",
-    "url": "https://www.dogpile.com/",
-    "icon": "https://www.dogpile.com/img/favicon.svg"
+    "name": "QRZ",
+    "url": "https://qrz.com/",
+    "icon": "./assets/favicons/qrz.jpg"
   },
   {
     "name": "Bubbles",
     "url": "https://bubbles.town/",
-    "icon": "https://bubbles.town/static/header-icon.png"
+    "icon": "./assets/favicons/bubbles.png"
   },
   {
     "name": "SLSKD",
     "url": "https://slskd.25cat.net/",
-    "icon": "https://slskd.25cat.net/favicon.ico"
+    "icon": "./assets/favicons/slskd.ico"
   },
   {
     "name": "Immich",
     "url": "https://immich.25cat.net/",
-    "icon": "https://immich.25cat.net/favicon-144.png"
+    "icon": "./assets/favicons/immich.png"
   },
   {
-    "name": "Jellyfin",
-    "url": "https://jellyfin.25cat.net/",
-    "icon": "https://jellyfin.25cat.net/web/icon-transparent.baba78f2a106d9baee83.png"
+    "name": "Vim Cheat Sheet",
+    "url": "https://vim.rtorr.com/",
+    "icon": "./assets/favicon/vimcheatsheet.png"
   },
   {
     "name": "Discord",
     "url": "https://discord.com/app/",
-    "icon": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6266bc493fb42d4e27bb8393_847541504914fd33810e70a0ea73177e.ico"
+    "icon": "./assets/favicons/discord.ico"
   },
   {
     "name": "ListenBrainz",
     "url": "https://listenbrainz.org/user/auroraskys/",
-    "icon": "https://listenbrainz.org/static/img/favicon-256.png"
+    "icon": "./assets/favicons/listenbrainz.png"
   }
 ]
